@@ -172,7 +172,9 @@ describe('JSON schema UI rendering', () => {
       expect(cellTexts[0]).toContain(p);
       const valueCell = cellTexts[1];
       expect(valueCell).toContain(String(pt));
-      expect(await within(tr).findByText(`the ${pt}`)).toBeInTheDocument();
+      expect(
+        await within(allCells[1]).findByText(`the ${pt}`),
+      ).toBeInTheDocument();
 
       if (basic.required?.includes(p)) {
         expect(cellTexts[0]).toContain('*');
@@ -399,7 +401,7 @@ describe('JSON schema UI rendering', () => {
       const rendered = await renderInTestApp(
         <LocalRenderSchema strategy="properties" schema={deep} />,
       );
-      assertDeepSchemaProperties(rendered, 'test');
+      await assertDeepSchemaProperties(rendered, 'test');
     });
     it('require oneOf', async () => {
       const schema: JSONSchema7 = {
