@@ -1,5 +1,14 @@
 # @backstage/backend-defaults
 
+## 0.19.0-next.3
+
+### Patch Changes
+
+- 392710f: The Azure DevOps URL reader now warns at startup when a personal access token is configured for Azure DevOps Services. Global personal access tokens [stop working on January 27, 2027](https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/), and organization-scoped tokens are now deprecated in favor of Microsoft Entra ID credentials. Errors from rejected credentials are also clearer.
+- fbd2535: Fixed a connection and memory leak in the GitHub URL reader, where every failed request with a large error response body, such as the error pages served during a GitHub Enterprise outage, left its connection open indefinitely.
+- Updated dependencies
+  - @backstage/integration@2.2.0-next.1
+
 ## 0.19.0-next.2
 
 ### Minor Changes

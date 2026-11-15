@@ -1,5 +1,12 @@
 # @backstage/ui
 
+## 0.20.0-next.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/version-bridge@1.1.0-next.0
+
 ## 0.20.0-next.0
 
 ### Minor Changes
